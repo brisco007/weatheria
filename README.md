@@ -2,7 +2,7 @@
 ceci est l'application de programmation web.
 
 ici, est là où sera postée le code. et chaque personne a son code à lui, dans sa branche qui sera nommée comme suit :
- branch_<nom de la personne> en plus de la page master
+ branch_nom de la personne en plus de la page master
   
  # Taches par personnes
  
