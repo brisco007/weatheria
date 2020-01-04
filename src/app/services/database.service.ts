@@ -39,13 +39,31 @@ export class DatabaseService {
 
       this.dbService.getByIndex('username', username).then(
         user => {
-          this.user = user,
-          onSuccess();
+          this.user = user;
+          if(password != user.password){
+            onFail();
+          }
+          else{
+            this.user = user;
+            onSuccess();
+          }
         },
         error => {
           onFail();
         }
       )
+   }
+
+   register(user, onSuccess: Function, onFail: Function){
+    this.addUser(user).then(
+      () => {
+        this.user = user;
+        onSuccess();
+      },
+      error => {
+        onFail();
+      }
+    );
    }
 
    getCurrentUser(): User{
@@ -73,6 +91,25 @@ export class DatabaseService {
    }
 
    /* Adress Method */
-   
+   getAddress(id){
+    this.dbService.currentStore = this.ADDRESS_STORE;
+    return this.dbService.getByKey(id);
+  }
+
+   addAddress(address: Address){
+     this.dbService.currentStore = this.ADDRESS_STORE;
+     return this.dbService.add(address);
+   }
+
+   updateAddress(address: Address){
+    this.dbService.currentStore = this.ADDRESS_STORE;
+    return this.dbService.update(address);
+  }
+
+  deleteAddress(address: Address){
+    this.dbService.currentStore = this.ADDRESS_STORE;
+    return this.dbService.delete(address);
+  }
+
 
 }
