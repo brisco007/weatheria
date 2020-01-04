@@ -8,6 +8,8 @@ import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { WeatherListComponent } from "./weather-list/weather-list.component";
 import { WeatherElementComponent } from "./weather-element/weather-element.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
+import { NgxIndexedDBModule } from 'ngx-indexed-db';
+
 
 //database configuratio
 const dbConfig = {
@@ -18,22 +20,23 @@ const dbConfig = {
       store: 'user',
       storeConfig: {keyPath: 'id', autoIncrement: true},
       storeSchema: [
-        {username: 'username', keyPath: 'username', options: {unique: true}},
-        {password: 'password', keyPath: 'password', options: {unique: false}},
-        {name: 'name', keyPath: 'name', options: {unique: false}},
-        {bird_date: 'bird_date', keyPath: 'bird_date', options: {unique: false}},
-        {proile: "profile", keyPath: 'profile', options: {unique: false}}
+        {name: 'username', keypath: 'username', options: {unique: true}},
+        {name: 'password', keypath: 'password', options: {unique: false}},
+        {name: 'name', keypath: 'name', options: {unique: false}},
+        {name: 'bird_date', keypath: 'bird_date', options: {unique: false}},
+        {name: "profile", keypath: 'profile', options: {unique: false}},
+        {name: 'addresses', keypath: 'addresses', options: {unique: false}}
       ]
     },
     {
       store: 'address',
       storeConfig: {keyPath: 'id', autoIncrement: true},
       storeSchema: [
-        {city: 'city', keyPath: 'city', options: {unique: true}},
-        {state: 'state', keyPath: 'state', options: {unique: false}},
-        {country: 'country', keyPath: 'country', options: {unique: false}},
-        {pos_X: 'pos_X', keyPath: 'pos_X', options: {unique: false}},
-        {pos_Y: "pos_Y", keyPath: 'pos_Y', options: {unique: false}}
+        {name: 'city', keypath: 'city', options: {unique: true}},
+        {name: 'state', keypath: 'state', options: {unique: false}},
+        {name: 'country', keypath: 'country', options: {unique: false}},
+        {name: 'pos_X', keypath: 'pos_X', options: {unique: false}},
+        {name: "pos_Y", keypath: 'pos_Y', options: {unique: false}}
       ]
     }
   ]
@@ -47,7 +50,10 @@ const dbConfig = {
     WeatherElementComponent,
     UserProfileComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, NoopAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, NoopAnimationsModule,
+    NgxIndexedDBModule.forRoot(dbConfig)
+
+  ],
   providers: [WeatherApiCallService],
   bootstrap: [AppComponent]
 })
