@@ -1,0 +1,56 @@
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.tool {
+    height: 12%;
+}
+
+.menu-header {
+    background: transparent;
+    display: grid;
+    grid-template-rows: 1fr -5fr;
+    grid-template-columns: 1fr 6fr;
+    grid-template-areas: "greeting greeting" "image details";
+    box-sizing: border-box;
+    width: 25%;
+    align-content: center;
+    color: white;
+}
+
+.account-details {
+    grid-area: details;
+    display: flex;
+    flex-flow: column;
+    margin-left: 1rem;
+    align-self: center;
+}
+
+.name__text {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.email__text {
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+}
+
+.profile-image__container {
+    grid-area: image;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    align-self: center;
+    margin-left: 2rem;
+}
+
+.profile__image {
+    max-width: 4rem;
+}

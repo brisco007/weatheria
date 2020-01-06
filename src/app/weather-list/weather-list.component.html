@@ -1,1 +1,4 @@
-<p>weather-list works!</p>
+<mat-button-toggle-group #group="matButtonToggleGroup" [value]="type" appearance="legacy" name="type" aria-label="type of forecast" (change)="onTypeChange(group.value)">
+    <mat-button-toggle value="hourly">Par heures</mat-button-toggle>
+    <mat-button-toggle value="daily">Par jours</mat-button-toggle>
+</mat-button-toggle-group>

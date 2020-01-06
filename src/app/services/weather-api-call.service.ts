@@ -1,4 +1,6 @@
 import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Subject, Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -23,5 +25,38 @@ export class WeatherApiCallService {
     "&appid=" +
     this.apiKey;
 
-  constructor() {}
+  constructor(public http: HttpClient) {}
+
+  getCityWeatherByName(city: string): Subject<string> {
+    const dataSub = new Subject<string>();
+    this.city = city;
+    this.http.get(this.actualWeatherUrl).subscribe(
+      data => {
+        console.log(data["weather"]);
+        dataSub.next(data["weather"]);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+    return dataSub;
+  }
+
+  getDailyForecast(city: string): Subject<Array<any>> {
+    const dataSubject = new Subject<Array<any>>();
+    this.city = city;
+    this.http.get(this.daylyForecastUrl).subscribe((weather: any) => {
+      dataSubject.next(weather.list);
+    });
+    return dataSubject;
+  }
+
+  getHourlyForecast(city: string): Subject<Array<any>> {
+    const dataSubject = new Subject<Array<any>>();
+    this.city = city;
+    this.http.get(this.hourlyForecastUrl).subscribe((weather: any) => {
+      dataSubject.next(weather.list);
+    });
+    return dataSubject;
+  }
 }
