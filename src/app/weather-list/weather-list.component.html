@@ -1,4 +1,14 @@
-<mat-button-toggle-group #group="matButtonToggleGroup" [value]="type" appearance="legacy" name="type" aria-label="type of forecast" (change)="onTypeChange(group.value)">
-    <mat-button-toggle value="hourly">Par heures</mat-button-toggle>
-    <mat-button-toggle value="daily">Par jours</mat-button-toggle>
-</mat-button-toggle-group>
+<div class="weatherList">
+    <div class="container">
+        <mat-button-toggle-group #group="matButtonToggleGroup" [value]="type" name="type" aria-label="type of forecast" (change)="onTypeChange(group.value)">
+            <mat-button-toggle value="hourly">Par heures</mat-button-toggle>
+            <mat-button-toggle value="daily">Par jours</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+
+    <div class="scrolling-wrapper">
+        <div class="card" *ngFor="let item of listOfElements">
+            <app-weather-element classDiv={{item.classDiv.card}} classIn={{item.classDiv.class}} type={{item.type}} temp={{item.temp}} hum={{item.hum}} weather={{item.weather}}></app-weather-element>
+        </div>
+    </div>
+</div>

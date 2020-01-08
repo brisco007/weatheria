@@ -1,5 +1,7 @@
 <mat-toolbar color="primary" class="tool">
-    <button mat-button>{{ville}}</button>
+    <button (click)="openMap()" mat-button>
+        {{ ville }}
+    </button>
     <!-- This fills the remaining space of the current row -->
     <span class="example-fill-remaining-space"></span>
     <section class="menu-header">
@@ -10,7 +12,7 @@
             <span class="name__text">Hamed Baatour</span>
         </div>
     </section>
-
 </mat-toolbar>
+
 <app-weather-main-element></app-weather-main-element>
 <app-weather-list></app-weather-list>

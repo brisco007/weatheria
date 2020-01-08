@@ -13,6 +13,12 @@ import { WeatherPageComponent } from "./weather-page/weather-page.component";
 import { WeatherMainElementComponent } from "./weather-main-element/weather-main-element.component";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { HttpClientModule } from "@angular/common/http";
+import { RouterModule } from "@angular/router";
+import { AngularOpenlayersModule } from "ngx-openlayers";
+import { OsmViewComponent } from "./osm-view/osm-view.component";
+import { MapPageComponent } from "./map-page/map-page.component";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatCardModule } from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -21,7 +27,10 @@ import { HttpClientModule } from "@angular/common/http";
     WeatherElementComponent,
     UserProfileComponent,
     WeatherPageComponent,
-    WeatherMainElementComponent
+    WeatherMainElementComponent,
+    MapPageComponent,
+    OsmViewComponent,
+    MapPageComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +38,11 @@ import { HttpClientModule } from "@angular/common/http";
     NoopAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
+    MatCardModule,
     MatButtonToggleModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularOpenlayersModule,
+    MatDialogModule
   ],
   providers: [WeatherApiCallService],
   bootstrap: [AppComponent]

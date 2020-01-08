@@ -119,5 +119,10 @@
       }
     }
   },
-  "defaultProject": "weatheria"
+  "defaultProject": "weatheria",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
