@@ -13,13 +13,13 @@ export interface Address {
 }
 
 export interface User {
-  id: number,
+  id?: number,
   username: string,
   password: string,
   name: string,
-  profile: any,
-  bird_date: string,
-  addresses: number[]
+  profile?: any,
+  bird_date?: string,
+  addresses?: number[]
 }
 
 

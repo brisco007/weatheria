@@ -8,7 +8,7 @@ export class WeatherApiCallService {
   city = "";
   numberOfDays = 5;
   actualWeatherUrl =
-    "https://samples.openweathermap.org/data/2.5/weather?q=" +
+    "https://samples.openweathermap.org/data/2.5/weather?q=" + 
     this.city +
     "&appid=" +
     this.apiKey;
