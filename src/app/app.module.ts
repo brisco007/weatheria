@@ -44,6 +44,13 @@ import { MatCardModule } from "@angular/material/card";
     AngularOpenlayersModule,
     MatDialogModule
   ],
+<<<<<<< HEAD
+=======
+  imports: [BrowserModule, AppRoutingModule, NoopAnimationsModule,
+    NgxIndexedDBModule.forRoot(dbConfig)
+
+  ],
+>>>>>>> 69fae0c5765d3c49a499663a3ada744abb6d10bb
   providers: [WeatherApiCallService],
   bootstrap: [AppComponent]
 })
