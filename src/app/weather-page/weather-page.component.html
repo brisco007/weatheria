@@ -1,12 +1,24 @@
 <mat-toolbar color="primary" class="tool">
     <button (click)="openMap()" mat-button>
-        {{ ville }}
-    </button>
+    {{ ville }}
+  </button>
+    <mat-label class="text1"> ou alors sélectionnez une ville </mat-label>
+    <mat-form-field>
+        <mat-select class="text2" [(value)]="selected">
+            <mat-option>None</mat-option>
+            <mat-option value="Yaoundé">Yaoundé</mat-option>
+            <mat-option value="London">London</mat-option>
+            <mat-option value="Paris">Paris</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button (click)="RefreshWeatherAll()" color="secondary" mat-button>
+    Météo
+  </button>
     <!-- This fills the remaining space of the current row -->
     <span class="example-fill-remaining-space"></span>
     <section class="menu-header">
         <div class="profile-image__container">
-            <img src="https://avatars3.githubusercontent.com/u/5658460?s=460&v=4" alt="profile-image" class="profile__image">
+            <img src="https://avatars3.githubusercontent.com/u/5658460?s=460&v=4" alt="profile-image" class="profile__image" />
         </div>
         <div class="account-details">
             <span class="name__text">Hamed Baatour</span>
@@ -14,5 +26,5 @@
     </section>
 </mat-toolbar>
 
-<app-weather-main-element></app-weather-main-element>
-<app-weather-list></app-weather-list>
+<app-weather-main-element ville="{{ selected }}" #actual></app-weather-main-element>
+<app-weather-list ville="{{ selected }}" #list></app-weather-list>

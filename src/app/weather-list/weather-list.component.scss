@@ -6,7 +6,7 @@
     &::-webkit-scrollbar {
         width: 2px;
         height: 8px;
-        background-color: rgba(130, 73, 150, 0.548);
+        background-color: rgba(129, 73, 150, 0.521);
     }
     &::-webkit-scrollbar-track {
         border-radius: 10px;
@@ -35,6 +35,6 @@
 }
 
 .weatherList {
-    background-color: rgba(73, 40, 117, 0.719);
+    /*  background-color: rgba(73, 40, 117, 0.13);*/
     margin: 2%;
 }

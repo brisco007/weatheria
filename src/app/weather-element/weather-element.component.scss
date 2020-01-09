@@ -18,16 +18,20 @@
 }
 
 .grid-item {
-    width: 190px;
+    width: 150px;
     margin: 2px;
-    background-color: #eeeaf13a;
+    background-color: #0c0c0cfd;
     overflow: hidden;
+    box-shadow: 2px 2px 5px;
+}
+.grid-item:hover{
+  background-color: #ad9b9b;
 }
 
 .card {
     position: relative;
     width: 100%;
-    padding: 5.3em 1em;
+    padding: 4.5em 1em;
     display: block;
 }
 
@@ -71,6 +75,7 @@
 
 .status p:first-child {
     font-weight: 600;
+    font-size: 12px;
     color: rgb(255, 255, 255);
 }
 
@@ -831,10 +836,10 @@
     -webkit-box-shadow: rgba(255, 255, 0, 0.1) 0 0 5px 5px;
     box-shadow: rgba(255, 255, 0, 0.1) 0 0 5px 5px;
     content: "";
-    height: 90px;
-    width: 90px;
+    height: 50px;
+    width: 50px;
     position: absolute;
-    left: 60px;
+    left: 50px;
     top: 60px;
 }
 
@@ -848,8 +853,8 @@
     box-shadow: yellow 0 0 5px 1px;
     border-radius: 100%;
     content: "";
-    height: 86px;
-    width: 86px;
+    height: 46px;
+    width: 46px;
     position: absolute;
     left: 2px;
     top: 2px;
@@ -863,11 +868,11 @@
     border-radius: 50%;
     content: "";
     height: 15px;
-    width: 120px;
+    width: 90px;
     opacity: 0.2;
     position: absolute;
-    left: -15px;
-    bottom: -40px;
+    left: -20px;
+    bottom: -25px;
     -webkit-transform: scale(0.7);
 }
 
@@ -964,8 +969,8 @@
     height: 50px;
     width: 50px;
     position: absolute;
-    left: 40px;
-    top: 80px;
+    left: 50px;
+    top: 60px;
 }
 
 .clouds:before {

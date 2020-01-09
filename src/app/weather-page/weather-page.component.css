@@ -6,6 +6,15 @@
     height: 12%;
 }
 
+.text1 {
+    font-size: 15px;
+    padding: 5px;
+}
+
+.text2 {
+    font-size: 15px;
+}
+
 .menu-header {
     background: transparent;
     display: grid;

@@ -1,5 +1,5 @@
 import { WeatherApiCallService } from "./../services/weather-api-call.service";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Subscription } from "rxjs";
 
 @Component({
@@ -24,6 +24,14 @@ export class WeatherListComponent implements OnInit {
   type: string;
   constructor(private weather: WeatherApiCallService) {}
 
+  @Input() ville;
+  RefreshWeather() {
+    this.subHourly = this.weather
+      .getDailyForecast(this.ville)
+      .subscribe(data => {
+        this.parseForecastHours(data);
+      });
+  }
   public listHours() {}
 
   public listDays() {}
@@ -31,13 +39,13 @@ export class WeatherListComponent implements OnInit {
     this.type = val;
     if (this.type == "hourly") {
       this.subDaily = this.weather
-        .getDailyForecast("London")
+        .getDailyForecast(this.ville)
         .subscribe(data => {
           console.log(this.parseForecastHours(data));
         });
     } else {
       this.subDaily = this.weather
-        .getDailyForecast("London")
+        .getDailyForecast(this.ville)
         .subscribe(data => {
           console.log(this.parseForecastDays(data));
         });
@@ -45,9 +53,11 @@ export class WeatherListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.subHourly = this.weather.getDailyForecast("Sydney").subscribe(data => {
-      this.parseForecastHours(data);
-    });
+    this.subHourly = this.weather
+      .getDailyForecast(this.ville)
+      .subscribe(data => {
+        this.parseForecastHours(data);
+      });
   }
 
   ngOnDestroy(): void {

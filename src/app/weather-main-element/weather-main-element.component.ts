@@ -13,16 +13,23 @@ export class WeatherMainElementComponent implements OnInit {
   type;
   weather;
   subActual: Subscription;
+  @Input() ville;
   constructor(private weather1: WeatherApiCallService) {}
 
   ngOnInit() {
     this.subActual = this.weather1
-      .getCityWeatherByName("London")
+      .getCityWeatherByName(this.ville)
       .subscribe(data => {
         console.log(this.parseActualWeather(data));
       });
   }
-
+  RefreshWeather() {
+    this.subActual = this.weather1
+      .getCityWeatherByName(this.ville)
+      .subscribe(data => {
+        console.log(this.parseActualWeather(data));
+      });
+  }
   parseActualWeather(data: any) {
     this.temp = Math.floor(data.main.temp - 273.15);
     this.type = new Date(Date.now()).toLocaleString();
