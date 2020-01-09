@@ -21,10 +21,16 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { MatCardModule } from "@angular/material/card";
 import { NgxIndexedDBModule } from "ngx-indexed-db";
 import { MatSelectModule } from "@angular/material/select";
+import { StartComponent } from "./pages/start/start.component";
 
-//database configuratio
+import { MDBBootstrapModule } from "angular-bootstrap-md";
+import { LoginComponent } from "./pages/start/login/login.component";
+import { RegisterComponent } from "./pages/start/register/register.component";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+
+//database configuration
 const dbConfig = {
-  name: "Weatheria_database",
+  name: "weatheria_database",
   version: 1,
   objectStoresMeta: [
     {
@@ -63,7 +69,9 @@ const dbConfig = {
     WeatherMainElementComponent,
     MapPageComponent,
     OsmViewComponent,
-    MapPageComponent
+    StartComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +85,10 @@ const dbConfig = {
     AngularOpenlayersModule,
     MatDialogModule,
     MatSelectModule,
-    NgxIndexedDBModule.forRoot(dbConfig)
+    NgxIndexedDBModule.forRoot(dbConfig),
+    MDBBootstrapModule.forRoot(),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [WeatherApiCallService],
   bootstrap: [AppComponent]
