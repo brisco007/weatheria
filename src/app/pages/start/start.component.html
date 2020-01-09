@@ -1,36 +1,39 @@
 <img class="wave" src="assets/images/wave.png" />
 <div class="container">
-  <div class="img">
-    <img src="assets/images/bg.svg" />
-  </div>
-  <div class="login-content">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <img src="assets/images/avatar.svg" />
-      <h2 class="title">Connexion</h2>
-      <div class="input-div one">
-        <div class="i">
-          <i class="fas fa-user"></i>
+    <div class="img">
+        <img src="assets/images/bg.svg" />
+    </div>
+    <div class="login-content">
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+            <div class="row">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <img src="assets/images/avatar.svg" />
+                    <h2 class="title">Connexion</h2>
+                    <div class="input-div one">
+                        <div class="i">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="div focusError">
+                            <h5>Nom d'utilisateur</h5>
+                            <input formControlName="username" type="text" class="input" />
+                        </div>
+                    </div>
+                    <div class="input-div pass">
+                        <div class="i">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="div">
+                            <h5>Mot de passe</h5>
+                            <input formControlName="password" type="password" class="input" />
+                        </div>
+                    </div>
+                    <input [disabled]="loginForm.invalid" type="submit" class="btn" value="Connexion" [routerLink]="['weather']" />
+                </form>
+            </div>
+
+            <div class="row">
+                <button class="btn" [routerLink]="['register']">Inscription</button>
+            </div>
         </div>
-        <div class="div focusError">
-          <h5>Nom d'utilisateur</h5>
-          <input formControlName="username" type="text" class="input" />
-        </div>
-      </div>
-      <div class="input-div pass">
-        <div class="i">
-          <i class="fas fa-lock"></i>
-        </div>
-        <div class="div">
-          <h5>Mot de passe</h5>
-          <input formControlName="password" type="password" class="input" />
-        </div>
-      </div>
-      <input
-        [disabled]="loginForm.invalid"
-        type="submit"
-        class="btn"
-        value="Connexion"
-      />
-    </form>
-  </div>
+    </div>
 </div>

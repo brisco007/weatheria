@@ -7,7 +7,7 @@
     </div>
 
     <div class="scrolling-wrapper">
-        <div class="card" *ngFor="let item of listOfElements">
+        <div class="card1" *ngFor="let item of listOfElements">
             <app-weather-element classDiv={{item.classDiv.card}} classIn={{item.classDiv.class}} type={{item.type}} temp={{item.temp}} hum={{item.hum}} weather={{item.weather}}></app-weather-element>
         </div>
     </div>
