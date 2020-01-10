@@ -1,0 +1,40 @@
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        width: 2px;
+        height: 8px;
+        background-color: rgba(129, 73, 150, 0.521);
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(127, 43, 153, 0.719);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(101, 30, 122, 0.911);
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: linear-gradient(left, #fff, #e4e4e4);
+        border: 1px solid #aaa;
+    }
+    .card1 {
+        display: inline-block;
+        margin: 0.5%;
+        box-shadow: 5px;
+    }
+}
+
+.container {
+    padding-left: 5%;
+    padding-top: 2%;
+    align-content: center;
+}
+
+.weatherList {
+    /*  background-color: rgba(73, 40, 117, 0.13);*/
+    margin: 2%;
+}
