@@ -1,1 +1,191 @@
-<p>user-profile works!</p>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+.photo img {
+    width: 150px;
+    height: 150px;
+    border: 3px solid #fff;
+    box-shadow: 0px 0px 10px #777;
+    border-radius: 50%;
+    margin-top: -80px;
+    position: relative;
+}
+.photo {
+    text-align: center;
+}
+.img__description{
+    text-align: center;
+    font-weight: 150px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 3px solid #fff;
+    box-shadow: 0px 0px 10px #777;
+    border-radius: 50%;
+    margin-top: -80px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(29,106,154,0.53);
+    color:#fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+}
+.img__wrap:hover .img__description{
+    visibility: visible;
+    opacity: 1;
+}
+.img__wrap{
+    position: relative;
+}
+.section{
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 20px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px #bbb;
+    background-color: #fff;
+}
+input[type=text]{
+    width:100%;
+    border:none;
+    border-bottom: 2px solid red($color: #000000);
+}
+input[type=date]{
+    width: 100%;
+}
+.section h2{
+    margin: 20px 0;
+    width: 90%;
+}
+.section > div{
+    width: 90%;
+}
+*{
+    font-family: Avenir, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    text-align: justify;
+    box-sizing: border-box;
+}
+#body{
+    background: #ededed;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: auto;
+}
+#photo img{
+    width: 200px;
+    height: 200px;
+    border: 3px solid #fff;
+    box-shadow: 0px 0px 10px #777;
+    border-radius: 50%;
+    margin-top: -80px;
+}
+#form{
+    width: 100%;
+    float: left;
+    text-decoration: green($color: #000000);
+}
+#photo{
+    text-align: center;
+}
+#section{
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 20px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px #bbb;
+    background-color: #fff;
+}
+#header{
+    border-bottom: 2px solid #fff;
+    height: 120px;
+}
+#header h1{
+    color: white;
+    font-size: 1.5em;
+    width: 90%;
+    margin: 0 auto;
+}
+#header, #footer{
+    width: 100%;
+    padding: 20px 0px;
+    background: url("./../assets/image/fond.jpg") #4f4f4f;
+    box-shadow: 0px 0px 15px #333;
+}
+#body{
+    background: #ededed;
+}
+h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+#text{
+    width:100%;
+}
+</style>
+
+
+<div id="body">
+<div id="header">
+<form>
+<input type = "button" value = "retour" onclick = "history.go(-1)">
+</form>
+<h1> Profil utilisateur </h1>
+</div>
+<div id="section">
+<div id="photo">
+<div class="img__wrap" (click)="open()">
+<img class="img__img" [src]="image" >
+<div class="img__description">
+<input id="chooser" type="file" style="display: none" />
+
+<br>
+<br><br>
+cliquer pour changer d'image 
+</div>
+</div>
+<form id="form">
+<h3> Nom</h3>
+<input type ="text" id="text" > 
+
+<h3> Prenom</h3>
+<input type ="text" id="text" > 
+
+<h3> Date de Naissance</h3>
+<input type ="date" id="start" name="date de naissance" value="2018-07-22" min="1990-01-01" max="2100-12-31"> 
+
+<h3> Sexe</h3>
+<input type ="radio" > F
+<input type ="radio" > M
+<br>
+<input type="submit" value="OK!" style="position:center">
+</form>
+</div>
+</div>
+</div>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+
+<router-outlet></router-outlet>
