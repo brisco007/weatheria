@@ -1,0 +1,41 @@
+<!-- <div class="weatherList">
+    <div class="container">
+        <mat-button-toggle-group #group="matButtonToggleGroup" [value]="type" name="type" aria-label="type of forecast" (change)="onTypeChange(group.value)">
+            <mat-button-toggle value="hourly">Par heures</mat-button-toggle>
+            <mat-button-toggle value="daily">Par jours</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+
+    <div class="scrolling-wrapper">
+        <div class="card1" *ngFor="let item of listOfElements">
+            <app-weather-element classDiv={{item.classDiv.card}} classIn={{item.classDiv.class}} type={{item.type}} temp={{item.temp}} hum={{item.hum}} weather={{item.weather}}></app-weather-element>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="card">
+
+
+    <ul class="nav md-pills nav-justified pills-info">
+        <li class="nav-item">
+            <a (click)="listHours()" class="nav-link active" data-toggle="tab" href="#panel85" role="tab">
+                <i class="fas fa-clock mr-1" aria-hidden="true"></i> Par heure
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)="listDays()" data-toggle="tab" href="#panel86" role="tab">
+                <i class="fas fa-calendar-alt mr-1" aria-hidden="true"></i> Par jour
+            </a>
+        </li>
+    </ul>
+
+
+    <div class="card-body">
+        <div class="row">
+            <div *ngFor="let item of listOfElements" class="col">
+                <app-small-weather-card [precip]="item.hum" [weather]="item.weather" [time]="item.type" [type]="type" [temp]="item.temp" [min_temp]="item.min_temp" [max_temp]="item.max_temp" [type_weather]="item.classDiv"></app-small-weather-card>
+            </div>
+        </div>
+    </div>
+</div>

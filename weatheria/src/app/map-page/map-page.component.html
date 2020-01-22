@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-4">
+        <div class="container">
+            <h4>Ajouter une nouvelle adresse</h4>
+
+            <form>
+                <div class="form-group">
+                    <label for="ville">Ville</label>
+                    <input type="text" class="form-control" name="ville" [(ngModel)]="data.city" id="ville" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="region">Région</label>
+                    <input type="text" class="form-control" name="region" [(ngModel)]="data.state" id="region" />
+                </div>
+
+                <div class="form-group">
+                    <label for="pays">Pays</label>
+                    <input type="text" class="form-control" name="pays" [(ngModel)]="data.country" id="pays" />
+                </div>
+                <div class="form-group">
+                    <label for="lon">longitude</label>
+                    <input type="text" class="form-control" name="longitude" [(ngModel)]="data.pox_X" id="lon" />
+                </div>
+                <div class="form-group">
+                    <label for="lat">latitude</label>
+                    <input type="text" class="form-control" name="latitude" [(ngModel)]="data.pos_Y" id="lat" />
+                </div>
+
+                <div class="col">
+                    <button type="Search" class="btn btn-success btn-block" (click)="searchAddress()">
+            Rechercher <i class="fas fa-search-location"></i>
+          </button>
+                    <button type="submit" class="btn btn-info btn-block" (click)="submitAddress()">
+            Enregistrer
+          </button>
+                    <button type="reset" class="btn btn-danger btn-block" (click)="resetAddress()">
+            Annuler
+          </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-8">
+        <app-osm-view [showDebugInfo]="false" [showControlsZoom]="true" [showControlsCurrentLocation]="true" (addressSelected)="onAdressSelected($event)" (addressChanged)="onAddressChange($event)" #map>
+        </app-osm-view>
+    </div>
+</div>

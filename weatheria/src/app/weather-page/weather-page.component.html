@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="row  mt-2">
+        <div class="col-8">
+            <div class="card weather-card {{ classWeather }}">
+                <!-- <div class="card-header p-0">
+          <div class="classic-tabs m-0">
+            <ul class="nav" id="myClassicTabShadow" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link  waves-light active show"
+                  id="profile-tab-classic-shadow"
+                  data-toggle="tab"
+                  href="#profile-classic-shadow"
+                  role="tab"
+                  aria-controls="profile-classic-shadow"
+                  aria-selected="true"
+                  >Météo</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link waves-light"
+                  id="follow-tab-classic-shadow"
+                  data-toggle="tab"
+                  href="#follow-classic-shadow"
+                  role="tab"
+                  aria-controls="follow-classic-shadow"
+                  aria-selected="false"
+                  >Map</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div> -->
+                <!-- Card content -->
+                <div class="card-body pb-3">
+                    <div class="tab-content" id="myClassicTabContentShadow">
+                        <div class="tab-pane fade active show" id="profile-classic-shadow" role="tabpanel" aria-labelledby="profile-tab-classic-shadow">
+                            <app-medium-weather-card (weatherEmitter)="changeMediumWeatherColor($event)" ville="{{ selected }}" #actual></app-medium-weather-card>
+                        </div>
+                        <div class="tab-pane fade" id="follow-classic-shadow" role="tabpanel" aria-labelledby="follow-tab-classic-shadow">
+                            <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 300px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card -->
+        </div>
+
+        <div class="col-4">
+            <!-- Card Regular -->
+            <div style="height: 420px" class="card">
+                <div class="card-header  green accent-4">
+                    <h6></h6>
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body text-center">
+                    <!-- Title -->
+                    <h4 class="card-title">
+                        <img src="assets/images/avatar.svg" class="rounded-circle mr-3" height="50px" width="50px" alt="avatar" />
+                        <strong>Steve77</strong>
+                    </h4>
+
+                    <div class="row align-items-center p-0">
+                        <div class="col-10 m-0">
+                            <select (change)="onChangeVille($event)" class="browser-default custom-select">
+                <option selected>Choisir une ville</option>
+                <option value="Yaoundé">Yaoundé</option>
+                <option value="Pekin">Pekin</option>
+                <option value="Berlin">Berlin</option>
+              </select>
+                        </div>
+                        <div class="col-2 m-0">
+                            <i style="font-size: 28px; color: green;" class="fas fa-plus" (click)="openMap()"></i>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div class="row justify-content-end mt-4">
+                        <button class="btn btn-sm btn-info btn-rounded">
+              Modifier profil
+            </button>
+                        <button class="btn btn-sm btn-danger btn-rounded">
+              Deconnexion
+            </button>
+                    </div>
+                </div>
+                <!-- /.Card content -->
+            </div>
+            <!-- /.Card Regular -->
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <app-weather-list ville="{{ selected }}" #list></app-weather-list>
+        </div>
+    </div>
+</div>

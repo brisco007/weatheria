@@ -1,0 +1,13 @@
+.card {
+    display: inline-block;
+    margin: 2%;
+    box-shadow: 5px;
+}
+
+.info {
+    text-align: center
+}
+
+.cont {
+    padding: 2%;
+}
