@@ -13,6 +13,7 @@ import { WeatherPageComponent } from "./weather-page/weather-page.component";
 import { WeatherMainElementComponent } from "./weather-main-element/weather-main-element.component";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { HttpClientModule } from "@angular/common/http";
+import { WeatherWidgetComponent } from './weather-widget/weather-widget.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from "@angular/common/http";
     WeatherElementComponent,
     UserProfileComponent,
     WeatherPageComponent,
-    WeatherMainElementComponent
+    WeatherMainElementComponent,
+    WeatherWidgetComponent
   ],
   imports: [
     BrowserModule,
