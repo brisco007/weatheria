@@ -33,7 +33,7 @@ export class SmallWeatherCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('Salut les amis', this.weather);
+
   }
 
 }

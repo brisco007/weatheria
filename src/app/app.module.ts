@@ -19,6 +19,7 @@ import { OsmViewComponent } from "./osm-view/osm-view.component";
 import { MapPageComponent } from "./map-page/map-page.component";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatCardModule } from "@angular/material/card";
+import { MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { NgxIndexedDBModule } from "ngx-indexed-db";
 import { MatSelectModule } from "@angular/material/select";
 import { StartComponent } from "./pages/start/start.component";
@@ -29,6 +30,7 @@ import { RegisterComponent } from "./pages/start/register/register.component";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { SmallWeatherCardComponent } from './compenents/small-weather-card/small-weather-card.component';
 import { MediumWeatherCardComponent } from './components/medium-weather-card/medium-weather-card.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 //database configuration
 const dbConfig = {
@@ -85,6 +87,8 @@ const dbConfig = {
     MatButtonModule,
     MatCardModule,
     MatButtonToggleModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     HttpClientModule,
     AngularOpenlayersModule,
     MatDialogModule,

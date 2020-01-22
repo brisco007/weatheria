@@ -45,7 +45,6 @@ export class MediumWeatherCardComponent implements OnInit {
     this.hum = data.main.humidity;
     this.wind = data.wind.speed;
     this.classWeather = this.getTheRightClass(this.weather);
-    console.log("here is the weather","aaaaaaa",this.classWeather)
 
     //  response.pluviometrie = data.rain ? data.rain : 0;
   }

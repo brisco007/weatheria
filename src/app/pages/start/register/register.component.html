@@ -51,15 +51,18 @@
                         </div>
                         <div class="div">
                             <h5>Date de naissance</h5>
-                            <input formControlName="bird_date" type="text" class="input" />
+                            <input [matDatepicker]="myDatepicker" formControlName="bird_date" type="text" class="input" />
+                            <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+                            <mat-datepicker #myDatepicker></mat-datepicker>
                         </div>
                     </div>
                     <input [disabled]="registerForm.invalid" type="submit" class="btn" value="Inscription" [routerLink]="['weather']" />
-                </form>
+                    <input type="button" value="Connexion" class="btn" routerLink="/register">
+                  </form>
             </div>
             <div class="row">
                 <div class="row">
-                    <button class="btn" [routerLink]="['']">Connexion</button>
+
                 </div>
             </div>
         </div>

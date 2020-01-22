@@ -70,8 +70,8 @@
   color: black;
  }
  .clouds{
-  background-color: #c5d9e0;
-  color: black;
+  background-color: #b1695a;
+  color: white;
  }
 
  .rain{
@@ -99,4 +99,11 @@
   height:100%;
   width:100%;
   position:absolute;
+  }
+
+  .bg-beauty{
+    background: #FF416C;
+    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+    background: linear-gradient(to right, #FF4B2B, #FF416C);
+    color: white;
   }

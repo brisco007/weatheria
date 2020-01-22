@@ -16,6 +16,10 @@ const routes: Routes = [
     component: WeatherPageComponent
   },
   {
+    path: "connexion",
+    component: StartComponent
+  },
+  {
     path: "register",
     component: RegisterComponent
   },

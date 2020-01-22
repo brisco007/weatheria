@@ -1,4 +1,4 @@
-import { FormGroup, Validators } from "@angular/forms";
+import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { Component, OnInit } from "@angular/core";
 import { DatabaseService } from "src/app/services/database.service";
 
@@ -9,12 +9,27 @@ import { DatabaseService } from "src/app/services/database.service";
 })
 export class RegisterComponent implements OnInit {
   [x: string]: any;
+  inputs: any;
 
   registerForm: FormGroup;
-  constructor(private databaseService: DatabaseService) {}
+  constructor(private databaseService: DatabaseService, private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.initForm();
+
+    this.inputs = document.querySelectorAll(".input");
+    this.inputs.forEach(input => {
+      input.addEventListener("focus", () => {
+        let parent = input.parentNode.parentNode;
+        parent.classList.add("focus");
+      });
+      input.addEventListener("blur", () => {
+        let parent = input.parentNode.parentNode;
+        if (input.value == "") {
+          parent.classList.remove("focus");
+        }
+      });
+    });
   }
 
   initForm() {
@@ -40,9 +55,11 @@ export class RegisterComponent implements OnInit {
         user,
         () => {
           //todo
+          console.log('Register reussi');
         },
         () => {
           //todo
+          console.log("Register echoué");
         }
       );
     }

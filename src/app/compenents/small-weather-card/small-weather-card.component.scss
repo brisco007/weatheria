@@ -1,5 +1,5 @@
 $color-sun: #EDC951;
-$color-cloud: #00A0B0;
+$color-cloud: #FFFFFF;
 $color-cloud-light: #00cee3;
 $color-cloud-dark: #008997;
 $color-rain-cloud: #666;
@@ -330,10 +330,16 @@ body {
 .sunny{
   background-color: #4fc1e9;
   color: black;
+  background: #FF416C;
+  background: -webkit-linear-gradient(to right, #AAFFA9, #11FFBD);
+  background: linear-gradient(to right, #AAFFA9, #11FFBD);
+  color: white;
  }
  .clouds{
-  background-color: #c5d9e0;
-  color: black;
+  background: #FF416C;
+  background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+  background: linear-gradient(to right, #FF4B2B, #FF416C);
+  color: white;
  }
 
  .rain{
